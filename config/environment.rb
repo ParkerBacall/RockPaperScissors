@@ -3,5 +3,10 @@ Bundler.require
 
 require_all 'lib'
 
-binding.pry 
+
+Cli.new.main #runs the menu 
+
+
+
+#binding.pry 
 0
