@@ -16,7 +16,7 @@ class GamePlay #< ActiveRecord::Base
     
       def game
         if @user_move == @computer_move
-			puts "The computer also played #{@computer_move} It's a tie!"
+            puts "The computer also played #{@computer_move} It's a tie!"
 		elsif @user_move == "rock" && @computer_move == "scissors"
 			puts "The computer played scissors. You win #{@user_bane}!"
 		elsif @user_move == "scissors" && @computer_move == "paper"
