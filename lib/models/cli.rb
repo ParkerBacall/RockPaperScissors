@@ -1,6 +1,11 @@
 require_relative 'game_play'
 
 class Cli #< ActiveRecord::Base
+    attr_reader :user_name
+
+    def initialize user_name = nil
+        @user_name = user_name
+    end
 
     def main
         puts "\n"
@@ -34,7 +39,8 @@ class Cli #< ActiveRecord::Base
         puts "\n"
         @user_name = gets.chomp
         puts "\n"
-        puts "hello #{@user_name}!"
+
+        puts "hello #{user_name}!"
         puts ""
         self.select_move
     end
@@ -42,6 +48,7 @@ class Cli #< ActiveRecord::Base
     def select_move
         puts "\n"
         puts "Please select your move. Type rock, paper, or scissors:"
+
         puts "\n"
         @user_move = gets.chomp
         self.game_start
