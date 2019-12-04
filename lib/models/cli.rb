@@ -1,4 +1,9 @@
 class Cli #< ActiveRecord::Base
+    attr_reader :user_name
+
+    def initialize user_name = nil
+        @user_name = user_name
+    end
 
     def main
         puts "\n"
@@ -32,7 +37,11 @@ end
         puts "\n"
         @user_name = gets.chomp
         puts "\n"
+
+        @user_name = User.create(name: user_name)
+
         puts "Hello #{@user_name}"
+
         puts "\n"
         puts "Please select your move. Type rock, paper, or scissor:"
         @user_move = gets.chomp
