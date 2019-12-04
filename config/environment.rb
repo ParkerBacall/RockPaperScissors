@@ -4,7 +4,7 @@ Bundler.require
 require_all 'lib'
 
 
-Cli.new.main #runs the menu 
+Cli.new.main
 
 
 
