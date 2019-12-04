@@ -8,5 +8,5 @@ Cli.new.main #runs the menu
 
 
 
-#binding.pry 
+binding.pry 
 0
