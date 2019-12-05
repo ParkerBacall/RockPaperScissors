@@ -37,7 +37,6 @@ class GamePlay #< ActiveRecord::Base
       @status = 'lose'
         end
         Game.create(status: @status, user: @user_name, computer_call: @computer_move, call: @user_move)
-    
     end
 
 

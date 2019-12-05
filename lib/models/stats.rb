@@ -23,3 +23,27 @@ class Stats
     end
 
 end
+
+def enter_user_name
+    puts "\n"
+    puts "Enter Username:"
+    puts "\n"
+    user_name = gets.chomp
+    puts "\n"
+    if @user_array.include?(user_name)
+        puts "Username already taken. Please select again:"
+        enter_user_name
+    else 
+        @user_name = User.create(name: user_name)
+        puts "hello #{user_name}!"
+        puts ""
+        select_move
+    end
+end
+
+def select_move prompt = TTY::Prompt.new
+    
+    @user_move = prompt.select( "Please select your move:" "\n",["Rock", "Paper","Scissors"])
+   
+    game_start
+end  
