@@ -10,11 +10,15 @@ class Cli #< ActiveRecord::Base
     end
 
     def existing_user_or_new prompt = TTY::Prompt.new
-        user_input = prompt.select("New or returning user?" "\n", ["Existing User", "New User"])
-        if user_input == "Existing User"
-            select_user_name
-        else
+        if @user_array.empty?
             enter_user_name
+        else
+            user_input = prompt.select("New or returning user?" "\n", ["Existing User", "New User"])
+                if user_input == "Existing User"
+                    select_user_name
+                else
+                    enter_user_name
+                end
         end
     end
 
@@ -28,7 +32,7 @@ class Cli #< ActiveRecord::Base
         puts "\n"
         puts "Enter Username:"
         puts "\n"
-        user_name = gets.chomp
+        user_name = gets.chomp.capitalize()
         puts "\n"
         if @user_array.include?(user_name)
             puts "Username already taken. Please select again:"
