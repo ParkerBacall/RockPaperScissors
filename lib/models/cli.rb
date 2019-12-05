@@ -11,25 +11,36 @@ class Cli #< ActiveRecord::Base
         @user_array = User.all.map {|user| user.name}
     end
 
-    #existingornew
+    def existing_user_or_new prompt = TTY::Prompt.new
+        user_input = prompt.select("New or returning user?" "\n", ["Existing User", "New User"])
+        if user_input == "Existing User"
+            select_user_name
+        else
+            enter_user_name
+        end
+    end
+
 
     def select_user_name prompt = TTY::Prompt.new
         user_name = prompt.select("Please select from existing user or enter new username:" "\n",  @user_array )
         select_move
     end
 
-
     def enter_user_name
         puts "\n"
-        puts "Enter Username"
+        puts "Enter Username:"
         puts "\n"
-
-        #somethin
-
-        @user_name = User.create(name: user_name)
-        puts "hello #{user_name}!"
-        puts ""
-        select_move
+        user_name = gets.chomp
+        puts "\n"
+        if @user_array.include?(user_name)
+            puts "Username already taken. Please select again:"
+            enter_user_name
+        else 
+            @user_name = User.create(name: user_name)
+            puts "hello #{user_name}!"
+            puts ""
+            select_move
+        end
     end
 
     def select_move prompt = TTY::Prompt.new
