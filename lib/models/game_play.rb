@@ -15,24 +15,29 @@ class GamePlay #< ActiveRecord::Base
         moves.sample
       end
     
-      def game
-        if @user_move == @computer_move
+    def game
+        if @user_move.downcase == @computer_move
             puts "The computer also played #{@computer_move} It's a tie!"
+            puts "\n"
             @status = 'tie'
-		elsif @user_move == "rock" && @computer_move == "scissors"
-      puts "The computer played scissors. You win #{@user_name}!"
+		elsif @user_move.downcase == "rock" && @computer_move == "scissors"
+      puts "The computer played scissors. You win!"
+      puts "\n"
         @status = 'win'
-		elsif @user_move == "scissors" && @computer_move == "paper"
-      puts "The computer played paper. You win #{@user_name}!"
+		elsif @user_move.downcase == "scissors" && @computer_move == "paper"
+      puts "The computer played paper. You win!"
       @status = 'win'
-		elsif @user_move == "paper" && @computer_move == "rock"
-      puts "The computer played rock. You win #{@user_name}!" 
+		elsif @user_move.downcase == "paper" && @computer_move == "rock"
+      puts "The computer played rock. You win!" 
+      puts "\n"
       @status = 'win'
 		else 
-      puts "The computer played #{@computer_move}. You lose #{@user_name}."
+      puts "The computer played #{@computer_move}. You lose :( "
+      puts "\n"
       @status = 'lose'
         end
         Game.create(status: @status, user: @user_name, computer_call: @computer_move, call: @user_move)
+    
     end
 
 
