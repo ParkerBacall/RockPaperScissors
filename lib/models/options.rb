@@ -19,7 +19,7 @@ class Options
                     puts "All of #{user_name}'s has been deleted."
                     Start.new.main
             elsif user_input == "Back"
-                Start.new.main
+                Start.new.main 
             end
     end
     
