@@ -3,13 +3,9 @@ Bundler.require
 
 require_all 'lib'
 
+ActiveRecord::Base.logger = nil
 
-
-Cli.new.main
-
-
-
-
+Start.new.main #comment this out to debug
 
 binding.pry 
 0

@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2019_12_04_221204) do
 
   create_table "games", force: :cascade do |t|
-    t.string "stats"
+    t.string "status"
     t.integer "user_id"
-    t.integer "rounds"
+    t.string "computer_call"
     t.string "call"
     t.index ["user_id"], name: "index_games_on_user_id"
   end
