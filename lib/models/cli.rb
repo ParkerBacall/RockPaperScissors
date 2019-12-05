@@ -3,7 +3,6 @@ require_relative 'game_play'
 class Cli #< ActiveRecord::Base
     attr_reader :user_name
     
-   
     def initialize user_name = nil
         @user_name = user_name
         @user_array = User.all.map {|user| user.name}
