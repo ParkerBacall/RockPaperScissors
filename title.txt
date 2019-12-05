@@ -1,10 +1,4 @@
-class Start
-    
-
-    def main prompt = TTY::Prompt.new
-        
-        puts <<-'EOF'
-
+"
  ____                    __          ____                                  
 /\  _`\                 /\ \        /\  _`\                                
 \ \ \L\ \    ___     ___\ \ \/'\    \ \ \L\ \ __     _____      __   _ __  
@@ -22,28 +16,4 @@ class Start
    \ `\____\ \____\\ \_\/\____/\/\____/\ \____/\ \_\\/\____/
     \/_____/\/____/ \/_/\/___/  \/___/  \/___/  \/_/ \/___/  
     
-
-        EOF
-
-        user_input = prompt.select( "\n", ["Play Game", "See Stats", "Options", "Quit"])
-        choice(user_input)
-    end
-
-
-    def choice user_input
-      
-        if user_input.downcase == 'play game'
-            cli = Cli.new
-            cli.existing_user_or_new 
-        elsif user_input.downcase == 'see stats'
-            Stats.new.stats_menu
-        elsif user_input.downcase == 'options'
-            Options.new.options_menu
-        elsif user_input.downcase == 'quit'
-            puts "\n"
-            exit
-            puts "\n"
-        end    
-    end
-
-end
+"
