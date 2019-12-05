@@ -12,7 +12,7 @@ class Start
       
         if user_input.downcase == 'play game'
             cli = Cli.new
-            cli.enter_user_name
+            cli.select_user_name
         elsif user_input.downcase == 'see stats'
             Stats.new.stats_menu
         elsif user_input.downcase == 'quit'

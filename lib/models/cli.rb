@@ -2,9 +2,20 @@ require_relative 'game_play'
 
 class Cli #< ActiveRecord::Base
     attr_reader :user_name
+    
+   
+
 
     def initialize user_name = nil
         @user_name = user_name
+        @user_array = User.all.map {|user| user.name}
+    end
+
+    #existingornew
+
+    def select_user_name prompt = TTY::Prompt.new
+        user_name = prompt.select("Please select from existing user or enter new username:" "\n",  @user_array )
+        select_move
     end
 
 
@@ -12,8 +23,9 @@ class Cli #< ActiveRecord::Base
         puts "\n"
         puts "Enter Username"
         puts "\n"
-        user_name = gets.chomp
-        puts "\n"
+
+        #somethin
+
         @user_name = User.create(name: user_name)
         puts "hello #{user_name}!"
         puts ""

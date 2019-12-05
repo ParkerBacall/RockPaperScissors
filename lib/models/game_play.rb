@@ -21,7 +21,7 @@ class GamePlay #< ActiveRecord::Base
             puts "\n"
             @status = 'tie'
 		elsif @user_move.downcase == "rock" && @computer_move == "scissors"
-      puts "The computer played scissors. You win!"
+      puts "The computer played scissors. You win !"
       puts "\n"
         @status = 'win'
 		elsif @user_move.downcase == "scissors" && @computer_move == "paper"
@@ -32,7 +32,7 @@ class GamePlay #< ActiveRecord::Base
       puts "\n"
       @status = 'win'
 		else 
-      puts "The computer played #{@computer_move}. You lose :( "
+      puts "The computer played #{@computer_move}. You lose 😢."
       puts "\n"
       @status = 'lose'
         end
