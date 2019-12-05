@@ -25,6 +25,7 @@ class Cli #< ActiveRecord::Base
 
     def select_user_name prompt = TTY::Prompt.new
         user_name = prompt.select("Please select from existing user or enter new username:" "\n",  @user_array )
+        @user_name = User.all.find{|user|user.name == user_name}
         select_move
     end
 
@@ -46,8 +47,9 @@ class Cli #< ActiveRecord::Base
     end
 
     def select_move prompt = TTY::Prompt.new
-        
-        @user_move = prompt.select( "Please select your move:" "\n",["Rock", "Paper","Scissors"])
+        move_array = ["Rock", "Paper","Scissors"]
+
+        @user_move = prompt.select( "Please select your move:" "\n", move_array.shuffle)
        
         game_start
     end  

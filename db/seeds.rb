@@ -1,3 +1,3 @@
 
-User.create(name: "Parker")
-User.create(name: "Sam")
+# User.create(name: "Parker")
+# User.create(name: "Sam")
