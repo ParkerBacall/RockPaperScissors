@@ -14,7 +14,7 @@ class Cli #< ActiveRecord::Base
         puts "Play Game"
         puts "\n"
         puts "See Stats"
-        self.choice
+        choice
     end
 
 
@@ -24,12 +24,14 @@ class Cli #< ActiveRecord::Base
         puts "\n"
         
         if user_input.downcase == 'play game'
-            self.enter_user_name
+            enter_user_name
         elsif user_input.downcase == 'see stats'
-            self.stats_menu
+            stats_menu
+        elsif user_input.downcase == 'exit'
+            exit
         else
             puts "Error, try again (check your spelling):"
-            self.main
+            main
         end
     end
 
@@ -39,10 +41,10 @@ class Cli #< ActiveRecord::Base
         puts "\n"
         @user_name = gets.chomp
         puts "\n"
-
+        @user_name = User.create(name: user_name)
         puts "hello #{user_name}!"
         puts ""
-        self.select_move
+        select_move
     end
 
     def select_move
@@ -51,7 +53,7 @@ class Cli #< ActiveRecord::Base
 
         puts "\n"
         @user_move = gets.chomp
-        self.game_start
+        game_start
     end  
     
     def game_start
@@ -62,9 +64,9 @@ class Cli #< ActiveRecord::Base
         else 
             puts "Error, try again (check your spelling)"
             puts ""
-            self.select_move
+            select_move
         end
-        self.play_again
+        play_again
     end
 
     def play_again
@@ -73,18 +75,21 @@ class Cli #< ActiveRecord::Base
         user_input = gets.chomp
         if  user_input.downcase == 'yes'
                 puts "\n"
-                self.select_move
+                select_move
         elsif 
             user_input.downcase == 'no'
                 puts "\n"
                 puts "Thank you for playing! Be sure to check out your all-time stats:"
-                self.main
+                main
+            elsif 
+                user_input.downcase == 'exit'
+                exit
         else 
             user_input.downcase != "no" && user_input.downcase != "yes"
                 puts "\n"
                 "Check your spelling and try again. Type yes or no:"
                 puts "\n"
-                self.play_again
+                play_again
         end
     end
 

@@ -5,11 +5,7 @@ require_all 'lib'
 
 
 
-Cli.new.main
-
-
-
-
+#Cli.new.main
 
 binding.pry 
 0
