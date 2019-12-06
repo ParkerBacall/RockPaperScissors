@@ -42,7 +42,7 @@ end
         elsif user_input == "#{user_name}'s Wins, Loses, Ties"
            puts "Wins: #{user_wins} Loses: #{user_loses} Ties: #{user_ties}"
         elsif user_input == "#{user_name}'s Win/Loss Ratio"
-            puts (user_wins/ (user_wins + user_loses).to_f).round(2)
+            puts (((user_wins/ (user_wins + user_loses).to_f).round(2) * 100).to_s + " %")
         elsif user_input == "#{user_name}'s Throws"
             puts "Rock: #{user_rock} Paper: #{user_paper} Scissors: #{user_scissors}"
         elsif user_input == "Back"
@@ -75,7 +75,7 @@ end
         elsif user_input == "Global Computer Throws"
             puts "Rock: #{global_computer_rock} Paper: #{global_computer_paper} Scissors: #{global_computer_scissors}"
         elsif user_input == "Global Win/Loss Ratio"  
-                puts (Game.all.select{|game| game.status == "win"}.length/ (Game.all.select{|game| game.status == "win"}.length + Game.all.select{|game| game.status == "lose"}.length).to_f).round(2)
+                puts (((global_wins/ (global_wins + global_losses).to_f).round(2) * 100).to_s + "%")
         else
             stats_menu
         end
