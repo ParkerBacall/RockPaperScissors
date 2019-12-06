@@ -34,4 +34,4 @@ To quit, navigate back to the start menu and select "Quit".
 
 Enjoy!
 
-
+[link text](https://www.youtube.com/watch?v=F1MYVnMCRVM&feature=youtu.be "Rock, Paper, Scissors Cli app video")
