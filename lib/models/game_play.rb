@@ -3,6 +3,8 @@ require_relative 'cli'
 class GamePlay #< ActiveRecord::Base
     attr_reader :user_move, :computer_move, :user_name, :status
 
+
+
     def initialize user_name, user_move
         @user_move = user_move
         @computer_move = computer_move
@@ -16,12 +18,34 @@ class GamePlay #< ActiveRecord::Base
       end
     
     def game
+      puts("\n")
+puts " ____".green
+puts "|__ /".green
+puts " |_ \\".green
+puts "|___/" .green
+sleep(1)
+puts("\n")
+puts "___ ".green
+puts "|_  )".green
+puts " / / ".green
+puts "/___|".green
+sleep(1)
+puts("\n")
+puts "  _ ".green
+puts " / |".green
+puts " | |".green
+puts " |_|".green
+sleep(1)
+puts("\n")
+puts("\n")
+
         if @user_move.downcase == @computer_move
             puts "The computer also played #{@computer_move} It's a tie! 😕".yellow
             puts "\n"
             @status = 'tie'
-		elsif @user_move.downcase == "rock" && @computer_move == "scissors"
+    elsif @user_move.downcase == "rock" && @computer_move == "scissors"
       puts "The computer played scissors. You win! 🤗".green
+      
       puts "\n"
         @status = 'win'
 		elsif @user_move.downcase == "scissors" && @computer_move == "paper"
@@ -29,7 +53,7 @@ class GamePlay #< ActiveRecord::Base
       @status = 'win'
 		elsif @user_move.downcase == "paper" && @computer_move == "rock"
       puts "The computer played rock. You win! 🤗".green
-      puts "\n"
+      puts "\n"      
       @status = 'win'
 		else 
       puts "The computer played #{@computer_move}. You lose. 😢".red
