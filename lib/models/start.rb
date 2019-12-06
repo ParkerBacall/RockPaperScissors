@@ -21,6 +21,7 @@ puts <<-'EOF'.green
    \ `\____\ \____\\ \_\/\____/\/\____/\ \____/\ \_\\/\____/
     \/_____/\/____/ \/_/\/___/  \/___/  \/___/  \/_/ \/___/
     
+    A useless game developed by Parker Bacall and Sam Hoidal.
     EOF
 
         user_input = prompt.select( "\n", ["Play Game", "See Stats", "Options", "Quit"])
