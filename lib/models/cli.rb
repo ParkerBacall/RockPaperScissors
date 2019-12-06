@@ -23,9 +23,13 @@ class Cli #< ActiveRecord::Base
 
 
     def select_user_name prompt = TTY::Prompt.new
-        user_name = prompt.select("Please select from existing user or enter new username:" "\n",  @user_array )
+        user_name = prompt.select("Please select from existing user or enter new username:" "\n",  @user_array, "Back" )
         @user_name = User.all.find{|user|user.name == user_name}
+        if user_name == "Back"
+            existing_user_or_new
+        elsif
         select_move
+        end
     end
 
     def enter_user_name
