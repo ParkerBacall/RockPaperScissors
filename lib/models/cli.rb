@@ -43,7 +43,7 @@ class Cli #< ActiveRecord::Base
             enter_user_name
         else 
             @user_name = User.create(name: user_name)
-            puts "hello #{user_name}!"
+            puts "Hello #{user_name}!"
             puts ""
             select_move
         end
