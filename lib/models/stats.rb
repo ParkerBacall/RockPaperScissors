@@ -40,7 +40,7 @@ end
         if user_input == "#{user_name}'s number of games"
             puts User.all.find{|user| user.name == user_name }.games.length
         elsif user_input == "#{user_name}'s Wins, Loses, Ties"
-           puts "Wins: #{user_wins} Loses: #{user_loses} Ties: #{user_ties}"
+           puts "Wins:" + " #{user_wins}".green + " Loses:" + " #{user_loses}".red + " Ties:" + " #{user_ties}".yellow
         elsif user_input == "#{user_name}'s Win/Loss Ratio"
             puts (((user_wins/ (user_wins + user_loses).to_f).round(2) * 100).to_s + " %")
         elsif user_input == "#{user_name}'s Throws"
@@ -69,7 +69,7 @@ end
         if user_input == "Global Total Games"
             puts Game.all.length
         elsif user_input == "Global Wins, Losses, Ties"
-             puts "Wins: #{global_wins} Loses: #{global_losses} Ties: #{global_ties}"
+             puts "Wins:" + " #{global_wins}".green + " Loses:" + " #{global_losses}".red + " Ties:" + " #{global_ties}".yellow
         elsif user_input == "Global Player Throws"
             puts "Rock: #{global_rock} Paper: #{global_paper} Scissors: #{global_scissors}"
         elsif user_input == "Global Computer Throws"

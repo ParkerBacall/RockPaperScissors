@@ -17,22 +17,22 @@ class GamePlay #< ActiveRecord::Base
     
     def game
         if @user_move.downcase == @computer_move
-            puts "The computer also played #{@computer_move} It's a tie!"
+            puts "The computer also played #{@computer_move} It's a tie! 😕".yellow
             puts "\n"
             @status = 'tie'
 		elsif @user_move.downcase == "rock" && @computer_move == "scissors"
-      puts "The computer played scissors. You win!"
+      puts "The computer played scissors. You win! 🤗".green
       puts "\n"
         @status = 'win'
 		elsif @user_move.downcase == "scissors" && @computer_move == "paper"
-      puts "The computer played paper. You win!"
+      puts "The computer played paper. You win! 🤗".green
       @status = 'win'
 		elsif @user_move.downcase == "paper" && @computer_move == "rock"
-      puts "The computer played rock. You win!" 
+      puts "The computer played rock. You win! 🤗".green
       puts "\n"
       @status = 'win'
 		else 
-      puts "The computer played #{@computer_move}. You lose 😢."
+      puts "The computer played #{@computer_move}. You lose. 😢".red
       puts "\n"
       @status = 'lose'
         end

@@ -13,3 +13,6 @@ gem "pry", "~> 0.12.2"
 gem "rake", "~> 13.0"
 gem "require_all", "~> 3.0"
 gem 'tty-prompt'
+
+
+gem "colorize", "~> 0.8.1"
