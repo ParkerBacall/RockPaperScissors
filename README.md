@@ -1,26 +1,9 @@
-<rawtext>
- ____                    __          ____                                  
-/\  _`\                 /\ \        /\  _`\                                
-\ \ \L\ \    ___     ___\ \ \/'\    \ \ \L\ \ __     _____      __   _ __  
- \ \ ,  /   / __`\  /'___\ \ , <     \ \ ,__/'__`\  /\ '__`\  /'__`\/\`'__\
-  \ \ \\ \ /\ \L\ \/\ \__/\ \ \\`\    \ \ \/\ \L\.\_\ \ \L\ \/\  __/\ \ \/ 
-   \ \_\ \_\ \____/\ \____\\ \_\ \_\   \ \_\ \__/.\_\\ \ ,__/\ \____\\ \_\ 
-    \/_/\/ /\/___/  \/____/ \/_/\/_/    \/_/\/__/\/_/ \ \ \/  \/____/ \/_/ 
-                                                       \ \_\               
-                                                        \/_/               
- ____                                                       
-/\  _`\           __                                        
-\ \,\L\_\    ___ /\_\    ____    ____    ___   _ __   ____  
- \/_\__ \   /'___\/\ \  /',__\  /',__\  / __`\/\`'__\/',__\ 
-   /\ \L\ \/\ \__/\ \ \/\__, `\/\__, `\/\ \L\ \ \ \//\__, `\
-   \ `\____\ \____\\ \_\/\____/\/\____/\ \____/\ \_\\/\____/
-    \/_____/\/____/ \/_/\/___/  \/___/  \/___/  \/_/ \/___/ 
 
-    
-    A useless game developed by Parker Bacall and Sam Hoidal.
-</rawtext>
+# Rock, Paper, Scissors
+A useless game developed by Parker Bacall and Sam Hoidal.
 
-# Run Instructions:
+
+### Run Instructions:
 
 1. Ruby is needed to run this program. To install Ruby:
     1. First check if Ruby is installed by enterring "ruby -v" in your terminal. 
@@ -32,8 +15,8 @@
     1. Once gems are installed, run "ruby config/environment.rb" in your terminal.
     1. Enjoy the game!
 
-# Game Overview:
-### CLI version of the classic skill game: Rock, Paper, Scissors.
+### Game Overview:
+##### CLI version of the classic skill game: Rock, Paper, Scissors.
 
 1. To Play
     1. To play, use your keyboard arrow keys to select "Play Game" and hit enter. 
