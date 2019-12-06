@@ -32,6 +32,8 @@ From the options menu you can delete your username and all corresponding stats (
 
 To quit, navigate back to the start menu and select "Quit".
 
+Here is a [video](https://www.youtube.com/watch?v=F1MYVnMCRVM&feature=youtu.be "Rock, Paper, Scissors") of the app in action!
+
 Enjoy!
 
 
