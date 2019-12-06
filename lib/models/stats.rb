@@ -65,7 +65,7 @@ end
         global_computer_paper =  Game.all.select {|game| game.computer_call == "paper"}.length
 
         puts "\n"
-        user_input = prompt.select( "Stats" "\n",["Global Total Games", "Global Wins, Losses, Ties", "Global Win/Loss Ratio", "Global Player Throws", "Global Computer Throws",  "Back"])
+        user_input = prompt.select( "Stats" "\n",["Global Total Games", "Global Wins, Losses, Ties", "Global Win/Loss Ratio", "Global Player Throws",  "Global Computer Throws", "User with the most games", "User with the most wins",  "Back"])
         if user_input == "Global Total Games"
             puts Game.all.length
         elsif user_input == "Global Wins, Losses, Ties"
@@ -76,6 +76,18 @@ end
             puts "Rock: #{global_computer_rock} Paper: #{global_computer_paper} Scissors: #{global_computer_scissors}"
         elsif user_input == "Global Win/Loss Ratio"  
             puts ((global_wins/ (global_wins + global_losses.to_f) * 100).round(2)).to_s + " %"
+        elsif user_input == "User with the most games" 
+            user = User.all.max_by {|user| user.games.length}
+            puts "#{user.games.length} - #{user.name}"
+        elsif user_input == "User with the most wins" 
+            user_wins_array = []
+            user_games = User.all.map{|user| user.games}
+            user_games.each do |users_game|
+                 user_wins_array << users_game.select {|game| game.status == "win"}
+            end
+            user_with_most_wins= user_wins_array.max_by {|user_wins_array|user_wins_array.length}
+           best_user = User.all.find{|user| user.id == user_with_most_wins[0].user_id}.name 
+            puts "#{user_with_most_wins.length} - #{best_user}"
         else
             stats_menu
         end

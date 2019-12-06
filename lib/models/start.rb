@@ -24,6 +24,9 @@ puts <<-'EOF'.green
     A useless game developed by Parker Bacall and Sam Hoidal.
     EOF
 
+
+ 
+
         user_input = prompt.select( "\n", ["Play Game", "See Stats", "Options", "Quit"])
         choice(user_input)
     end
