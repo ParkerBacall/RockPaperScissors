@@ -1,7 +1,4 @@
-
-# Rock, Paper, Scissors
-A useless game developed by Parker Bacall and Sam Hoidal.
-
+![](title.png)
 
 ### Run Instructions:
 
