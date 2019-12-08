@@ -3,6 +3,7 @@
 A useless game developed by Parker Bacall and Sam Hoidal.
 
 
+
 ### Run Instructions:
 
 1. Ruby is needed to run this program. To install Ruby:
@@ -37,5 +38,7 @@ To quit, navigate back to the start menu and select "Quit".
 Here is a [video](https://www.youtube.com/watch?v=F1MYVnMCRVM&feature=youtu.be "Rock, Paper, Scissors") of the app in action!
 
 Enjoy!
+
+![](title.png)
 
 
